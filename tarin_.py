@@ -23,13 +23,13 @@ def parse_args():
     # Network
     parser.add_argument('--network', type=str, default='mynet', help='Network name in inference/models')
     parser.add_argument('--dataset', type=str, default="jacquard", help='Dataset Name ("cornell" or "jacquard")')
-    parser.add_argument('--dataset-path', type=str, default=r"E:\grasp_detect\dataset\jacquard\jacquard", help='Path to dataset')
+    parser.add_argument('--dataset-path', type=str, default=r"D:\grasp_detect\dataset\jacquard", help='Path to dataset')
     parser.add_argument('--use-depth', type=int, default=1, help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=1, help='Use RGB image for training (0/1)')
     parser.add_argument('--split', type=float, default=0.9, help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split for cross validation.')
-    parser.add_argument('--num-workers', type=int, default=0, help='Dataset workers')#8
+    parser.add_argument('--num-workers', type=int, default=8, help='Dataset workers')
 
     parser.add_argument('--batch-size', type=int, default=8, help='Batch size')
     parser.add_argument('--vis', type=bool, default=False, help='vis')
@@ -37,7 +37,7 @@ def parse_args():
     parser.add_argument('--batches-per-epoch', type=int, default=1000, help='Batches per Epoch')
     # parser.add_argument('--val-batches', type=int, default=5449, help='Validation Batches')
     # Logging etc.
-    parser.add_argument('--description', type=str, default='training_jacquard', help='Training description')
+    parser.add_argument('--description', type=str, default='training_cornell', help='Training description')
     parser.add_argument('--outdir', type=str, default='output/models/', help='Training Output Directory')
 
     args = parser.parse_args()
